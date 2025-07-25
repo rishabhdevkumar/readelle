@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+
+<body style="background: #c0bebec5;">
+    <div class="w3-sidebar w3-bar-block w3-white w3-card" style="display:none; z-index:5;" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-green">
+            Close <span style="float: right;">✖</span>
+        </button>
+        <a href="home.html" class="w3-bar-item w3-button">Home</a>
+        <a href="book.html" class="w3-bar-item w3-button">Books</a>
+        <a href="about.html" class="w3-bar-item w3-button">About</a>
+        <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+        <a href="logout.html" class="w3-bar-item w3-button">Logout</a>
+    </div>
+    <div class="w3-bar w3-blue" style="display: flex; align-items: center;">
+        <div class="mobile-menu-icon">
+            <button class="w3-button w3-xlarge" onclick="w3_open()">☰</button>
+        </div>
+        <div class="w3-row-padding" style="flex: 1; display: flex; align-items: center;">
+            <div class="w3-col l2 m2 s2" style="display: flex; align-items: center;">
+                <h3 style="margin: 0; font-weight: bold; font-family: AnandaBlackPersonalUseRegular-rg9Rx;">
+                    <b>BookHavels</b>
+                </h3>
+            </div>
+            <div class="w3-col l0 m10 s10  w3-padding" style="display: flex;">
+                <div class="nav-links" style="display: flex;">
+                    <a href="home.html" class="w3-bar-item" style="text-decoration: none; margin: 0 10px;">Home</a>
+                    <a href="book.html" class="w3-bar-item" style="text-decoration: none; margin: 0 10px;">Books</a>
+                    <a href="about.html" class="w3-bar-item" style="text-decoration: none; margin: 0 10px;">About</a>
+                    <a href="contact.html" class="w3-bar-item"
+                        style="text-decoration: none; margin: 0 10px;">Contact</a>
+                    <a href="logout.html" class="w3-bar-item"
+                        style="text-decoration: none; margin: 0px 10px;">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-card w3-white w3-padding">
+        <div class="w3-row">
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">DASHBOARD</a>
+            </div>
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">MY ORDERS</a>
+            </div>
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">MY PROFILE</a>
+            </div>
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">SETTINGS</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col l12 m12 s12">
+                <div class="w3-card w3-white">
+                    <header class="w3-center">
+                        <h4 style="border-bottom: 2px solid rgb(153, 153, 153);"><b>MY DASHBOARD</b></h4>
+                    </header>
+                    <div class="w3-margin-top">
+                        <header class="w3-padding">
+                            <h5>Personal Information</h5>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

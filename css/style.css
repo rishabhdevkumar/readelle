@@ -1,0 +1,28 @@
+/* .w3-sidebar {
+    width: 250px;
+  }
+
+  .mobile-menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: block;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    .mobile-menu-icon {
+      display: block;
+    }
+
+    .nav-links {
+      display: none !important;
+    }
+  }
+
+   */
+
+   .w3-hover-text-aqua {
+    padding-right: 40px;
+}
