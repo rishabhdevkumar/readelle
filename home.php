@@ -7,12 +7,6 @@
     <title>BookHaven</title>
     <link rel="stylesheet" href="./css/w3.css">
     <link rel="stylesheet" href="./css/home.css">
-    <script>
-        function toggleMobileMenu() {
-            var x = document.getElementById("mobileNav");
-            x.classList.toggle("w3-show");
-        }
-    </script>
 
 </head>
 
@@ -21,7 +15,8 @@
         <div class="w3-row w3-content" style="max-width:1200px; line-height:48px;">
             <div class="w3-col s6 m3 l2 w3-left-align">
                 <header class="w3-xlarge w3-center">
-                    <!-- <img src="./images/logoImage.jpg" alt="image" width="70px" height="70px" style="border-radius: 50%;"> -->
+                    <img src="./images/20250725_112042[1].png" alt="image" width="70px" height="70px"
+                        style="border-radius: 50%;">
                     <h3
                         style="display: inline-block; font-family: AnandaBlackPersonalUseRegular-rg9Rx; color: #9bb6f0; margin-left: 10px;">
                         <b>Readelle</b>
@@ -33,28 +28,46 @@
             </div>
             <div class="w3-col m9 l10 w3-hide-small w3-padding">
                 <div class="w3-center w3-container w3-margin-right">
-                    <a href="home.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="home.php" class="w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">Home</a>
-                    <a href="book.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="book.php" class="w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">Book</a>
-                    <a href="about.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="about.php" class="w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">About</a>
-                    <a href="contact.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="contact.php" class="w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">Contact</a>
-                    <a href="login.html" class="w3-hover-text-aqua" style="float: right; text-decoration: none;">Login
-                        <a href="signup.html" class="w3-hover-text-aqua"
-                            style="float: right; text-decoration: none">Start Reading</a>
+                    <div class="w3-dropdown-hover" style="float: right; margin-left: 10px;">
+                        <a class="w3-hover-text-aqua w3-padding-small"
+                            style="text-decoration: none; display: inline-block;">
+                            Change Mode ▾
+                        </a>
+                        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                            <a href="#" onclick="setTheme('light')" class="w3-bar-item w3-button">Light Mode</a>
+                            <a href="#" onclick="setTheme('dark')" class="w3-bar-item w3-button">Dark Mode</a>
+                        </div>
+                    </div>
+                    <a href="login.php" class="w3-hover-text-aqua"
+                        style="float: right; text-decoration: none; margin-right: 10px;">Login</a>
+                    <a href="signup.php" class="w3-hover-text-aqua"
+                        style="float: right; text-decoration: none; margin-right: 10px;">Start Reading</a>
                 </div>
             </div>
         </div>
     </div>
     <div id="mobileNav" class="w3-bar-block w3-black w3-hide w3-hide-medium w3-hide-large w3-margin-top">
-        <a href="home.html" class="w3-bar-item w3-button" style="padding-top: 60px;">Home</a>
-        <a href="book.html" class="w3-bar-item w3-button">Book</a>
-        <a href="about.html" class="w3-bar-item w3-button">About</a>
-        <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
-        <a href="login.html" class="w3-bar-item w3-button">Login</a>
-        <a href="signup.html" class="w3-bar-item w3-button">Start Reading</a>
+        <a href="home.php" class="w3-bar-item w3-button" style="padding-top: 60px;">Home</a>
+        <a href="book.php" class="w3-bar-item w3-button">Book</a>
+        <a href="about.php" class="w3-bar-item w3-button">About</a>
+        <a href="contact.php" class="w3-bar-item w3-button">Contact</a>
+        <a href="login.php" class="w3-bar-item w3-button">Login</a>
+        <a href="signup.php" class="w3-bar-item w3-button">Start Reading</a>
+        <div class="w3-dropdown-click">
+            <button onclick="toggleThemeDropdown()" class="w3-bar-item w3-button">Change Mode ▾</button>
+            <div id="themeDropdown" class="w3-dropdown-content w3-bar-block w3-card-4 w3-white" style="display:none;">
+                <a href="#" onclick="setTheme('light')" class="w3-bar-item w3-button">Light Mode</a>
+                <a href="#" onclick="setTheme('dark')" class="w3-bar-item w3-button">Dark Mode</a>
+            </div>
+        </div>
     </div>
     <div>
         <img src="./images/library.jpg" width="100%" height="635px"
@@ -110,7 +123,8 @@
                 </div>
             </div>
             <div class="w3-col l4 m6 s12 w3-margin-bottom">
-                <div class="w3-card w3-round-xlarge w3-center w3-padding w3-border" onclick="goToCategory('Biographies')">
+                <div class="w3-card w3-round-xlarge w3-center w3-padding w3-border"
+                    onclick="goToCategory('Biographies')">
                     <i class="w3-xlarge w3-margin-bottom w3-text-blue w3-opacity 
                     w3-hover-opacity-off w3-margin-top w3-wide">&#128100;</i>
                     <h4><b>Biographies</b></h4>
@@ -165,13 +179,13 @@
             <div class="w3-col s12 m3 l3">
                 <h4><b>Quick Links</b></h4>
                 <ul class="w3-ul">
-                    <h6><a href="home.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="home.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             Home</a></h6>
-                    <h6><a href="book.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="book.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             Books</a></h6>
-                    <h6><a href="about.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="about.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             About</a></h6>
-                    <h6><a href="contact.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="contact.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             Contact</a></h6>
                 </ul>
             </div>

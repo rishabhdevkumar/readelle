@@ -1,0 +1,205 @@
+<?php
+    include("config.php");
+    if(isset($_POST['submit']))
+    {
+        $Name = $_POST['name'];
+        $Email = $_POST['email'];
+        $Password = MD5($_POST['password']);
+        $State = $_POST['state'];
+        $City = $_POST['city'];
+        $Address = $_POST['address'];
+
+        $valid_email = "SELECT * FROM user WHERE email = '".$Email."'";
+        $run_email = mysqli_query($connect,$valid_email);
+        $rows = mysqli_num_rows($run_email);
+        if($rows)
+        {
+            echo '<script>alert("Email Already Exists")<script>';
+        }else
+        {
+            $add = "INSERT INTO user(name, email, password, state, city, address)
+        VALUES('".$Name."','".$Email."','".$Password."','".$State."','".$City."','".$Address."')";
+        $run = mysqli_query($connect, $add);
+        if($run)
+        {
+        echo '<script>alert("Added Successfully")</script>';
+        }else{
+        echo '<script>alert("Insertion Error")</script>';
+        }
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="margin: 0; background: #ecececf1;">
+    <div class="w3-top w3-black w3-container">
+        <div class="w3-row w3-content" style="max-width:1200px; line-height:48px;">
+            <div class="w3-col s6 m3 l2 w3-left-align">
+                <header class="w3-xlarge w3-center">
+                    <img src="./images/20250725_112042[1].png" alt="image" width="70px" height="70px">
+                    <h3 style="display: inline; font-family: AnandaBlackPersonalUseRegular-rg9Rx; color: #9bb6f0;">
+                        <b>Readelle</b>
+                    </h3>
+                </header>
+            </div>
+            <div class="w3-col s6 w3-right-align w3-hide-medium w3-hide-large">
+                <button class="w3-black" style="border: none;" onclick="toggleMobileMenu()">☰</button>
+            </div>
+            <div class="w3-col m9 l10 w3-hide-small w3-padding">
+                <div class="w3-center w3-container w3-margin-right">
+                    <a href="home.php" class="w3-black w3-margin-right w3-hover-text-aqua"
+                        style="text-decoration: none;">Home</a>
+                    <a href="book.php" class="w3-black w3-margin-right w3-hover-text-aqua"
+                        style="text-decoration: none;">Book</a>
+                    <a href="about.php" class="w3-black w3-margin-right w3-hover-text-aqua"
+                        style="text-decoration: none;">About</a>
+                    <a href="contact.php" class="w3-black w3-margin-right w3-hover-text-aqua"
+                        style="text-decoration: none;">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobileNav" class="w3-bar-block w3-black w3-hide w3-hide-medium w3-hide-large w3-margin-top">
+        <a href="home.php" class="w3-bar-item w3-button" style="padding-top: 60px;">Home</a>
+        <a href="book.php" class="w3-bar-item w3-button">Book</a>
+        <a href="about.php" class="w3-bar-item w3-button">About</a>
+        <a href="contact.php" class="w3-bar-item w3-button">Contact</a>
+    </div>
+    <div class="w3-display-container" style="height: 110vh;">
+        <div class="w3-display-middle" style="width: 100%;">
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="w3-card w3-white w3-padding-large w3-round-large">
+                    <header class="w3-container w3-center">
+                        <h3><b>Create Account</b></h3>
+                    </header>
+                    <form class="w3-container" method="POST" action="">
+                        <div class="w3-row">
+                            <div class="w3-col s12 m6 l6" style="padding: 0 4px;">
+                                <label>State</label>
+                                <select class="w3-input w3-border w3-round" name="state" required>
+                                    <option value="">Select your state</option>
+                                    <option value="Jharkhand">Jharkhand</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                            </div>
+                            <div class="w3-col s12 m6 l6" style="padding: 0 4px;">
+                                <label>City</label>
+                                <select class="w3-input w3-border w3-round" name="city" required>
+                                    <option value="">Select your city</option>
+                                    <option value="Jamshedpur">Jamshedpur</option>
+                                    <option value="Ranchi">Ranchi</option>
+                                    <option value="Patna">Patna</option>
+                                    <option value="Lucknow">Lucknow</option>
+                                    <option value="Kolkata">Kolkata</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="w3-row w3-margin-top">
+                            <div class="w3-col s12 m6 l6" style="padding: 0 4px;">
+                                <label>Full Name</label>
+                                <input class="w3-input w3-border w3-round" type="text" name="name" id="name"
+                                    placeholder="Enter full name" required>
+                            </div>
+                            <div class="w3-col s12 m6 l6" style="padding: 0 4px;">
+                                <label>Email</label>
+                                <input class="w3-input w3-border w3-round" name="email" type="email" id="email"
+                                    placeholder="Enter email id" required>
+                            </div>
+                        </div>
+                        <div class="w3-row w3-margin-top">
+                            <div class="w3-col s12 m6 l6" style="padding: 0 4px;">
+                                <label>Password</label>
+                                <input class="w3-input w3-border w3-round" name="password" type="password" id="password"
+                                    placeholder="Enter password" required>
+                            </div>
+                            <div class="w3-col s12 m6 l6" style="padding: 0 4px;">
+                                <label>Confirm Password</label>
+                                <input class="w3-input w3-border w3-round" name="confirm_password" type="password"
+                                    id="confirm_password" placeholder="Enter confirm password" required>
+                            </div>
+                        </div>
+                        <div class="w3-row w3-margin-top">
+                            <div class="w3-col s12 m12 l12">
+                                <label>Address</label>
+                                <textarea class="w3-input w3-border" name="address" id="address"
+                                    placeholder="enter address" style="resize: none;"></textarea>
+                            </div>
+                        </div>
+                        <button class="w3-button w3-cobalt w3-round-large w3-margin-top" type="submit" name="submit"
+                            value="submit" style="width: 100%;" onclick=" return validation()"><b>sign in</b></button>
+                        <div class="w3-center w3-margin-top">
+                            <p>Already have an Account?
+                                <a href="login.php" style="text-decoration: none;"
+                                    class="w3-text-blue"><b>login</b></a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-black">
+        <div class="w3-row-padding">
+            <div class="w3-col s12 m3 l3">
+                <h4 class="w3-text-blue" style="font-family: AnandaBlackPersonalUseRegular-rg9Rx;"><b>BookHavels</b>
+                </h4>
+                <p class="w3-text-grey">Discover your next Favourite book in our<br> vast collection of stories,
+                    knpwledge,<br> and Adventure</p>
+            </div>
+            <div class="w3-col s12 m3 l3">
+                <h4><b>Quick Links</b></h4>
+                <ul class="w3-ul">
+                    <h6><a href="home.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            Home</a></h6>
+                    <h6><a href="book.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            Books</a></h6>
+                    <h6><a href="about.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            About</a></h6>
+                    <h6><a href="contact.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            Contact</a></h6>
+                </ul>
+            </div>
+            <div class="w3-col s12 m3 l3">
+                <h4><b>Categories</b></h4>
+                <ul class="w3-ul">
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            Fiction</a></h6>
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            Non-Fiction</a></h6>
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                            Mystery</a></h6>
+                </ul>
+            </div>
+            <div class="w3-col s12 m3 l3">
+                <header>
+                    <h4><b>Support</b></h4>
+                </header>
+                <ul class="w3-ul">
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">Help
+                            Center</a></h6>
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">Privacy
+                            Policy</a></h6>
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">Terms of
+                            Service</a></h6>
+                    <h6><a href="#" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">FAQ</a></h6>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/signup.js"></script>
+</body>
+
+</html>

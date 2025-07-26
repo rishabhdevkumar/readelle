@@ -1,20 +1,25 @@
+/* Default body styling (Dark Theme by default) */
 body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  color: #fff; 
-  background: linear-gradient(to bottom, #000 0%, #000 0%, #000 0% );
-  .w3-card {
+  color: #fff;
+  background: #000;
+}
+
+/* Card styles */
+.w3-card {
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   overflow: hidden;
   transition: all 0.3s ease;
-    }
+}
 
 .w3-card:hover {
   transform: translateY(-10px);
   background: #292b33f3;
 }
+
 .w3-card::before {
   content: '';
   position: absolute;
@@ -26,35 +31,40 @@ body {
   transition: left 0.6s ease;
   z-index: 0;
 }
+
 .w3-card:hover::before {
   left: 100%;
 }
+
 .w3-card > * {
   position: relative;
   z-index: 1;
 }
-#features{
-    background: #27273a;
+
+/* Features section background */
+#features {
+  background: #27273a;
 }
 
-}
-
+/* Text shimmer styles */
 .read {
   font-weight: 700;
-  background: linear-gradient(180deg,  #2200ff,  #f1f0f8,  #437dfa);
+  background: linear-gradient(180deg, #2200ff, #f1f0f8, #437dfa);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
 }
+
 .catagory {
   font-weight: 700;
-  background: linear-gradient(180deg,  #bdecff,  #acf7d8,  #7ba0ee);
+  background: linear-gradient(180deg, #bdecff, #acf7d8, #7ba0ee);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s ease-in-out infinite;
 }
+
 @keyframes shimmer {
   0%, 0% { filter: hue-rotate(0deg); }
   50% { filter: hue-rotate(180deg); }
@@ -63,6 +73,37 @@ body {
 .w3-hover-text-aqua {
   padding-right: 40px;
 }
+
+body.light-theme {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.light-theme .w3-card {
+  border: 1px solid #000;
+}
+
+
+body.light-theme .w3-card,
+body.light-theme .w3-container,
+body.light-theme .w3-bar,
+body.light-theme .w3-dropdown-content {
+  background-color: #f2f2f2 !important;
+  color: #000 !important;
+}
+
+body.light-theme a {
+  color: #000 !important;
+}
+
+body.dark-theme {
+  color: #fff !important;
+}
+
+
+
+
+
 
 
 

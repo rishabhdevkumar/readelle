@@ -1,5 +1,32 @@
-/* .book-card{ */
-    .w3-border{
-        box-shadow: 0px 4px 4px 4px #000000d8;
-        
-    }
+.book-card {
+  transition: all 0.3s ease;
+}
+
+.book-card .w3-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.book-card .w3-card:hover {
+  transform: scale(1.14);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.book-card img {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-card h6 {
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.book-card p {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+

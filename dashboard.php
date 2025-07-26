@@ -1,0 +1,106 @@
+<?php
+    include("config.php");
+    $id = $_SESSION['user_id'];
+    $query = "SELECT * FROM user WHERE id = '".$id."'";
+    $run = mysqli_query($connect, $query);
+    $fetch = mysqli_fetch_array($run);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/w3.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body style="background: #c0bebec5;">
+    <div class="w3-top w3-blue w3-container">
+        <div class="w3-row w3-content" style="max-width:1200px; line-height:48px;">
+            <div class="w3-col s6 m3 l2 w3-left-align">
+                <header class="w3-xlarge w3-center">
+                    <img src="./images/20250725_112042[1].png" alt="image" width="70px" height="70px">
+                    <h3 class="w3-text-white"
+                        style="display: inline; font-family: AnandaBlackPersonalUseRegular-rg9Rx;">
+                        <b>Readelle</b>
+                    </h3>
+                </header>
+            </div>
+            <div class="w3-col s6 w3-right-align w3-blue w3-hide-medium w3-hide-large">
+                <button style="border: none;" class="w3-blue" onclick="toggleMobileMenu()">☰</button>
+            </div>
+            <div class="w3-col m9 l10 w3-hide-small w3-padding">
+                <div class="w3-center w3-container w3-margin-right">
+                    <a href="" class="w3-margin-right w3-hover-text-aqua" style="text-decoration: none;">Books</a>
+                    <a href="" class="w3-margin-right w3-hover-text-aqua" style="text-decoration: none;">Catagories</a>
+                    <a href="" class="w3-margin-right w3-hover-text-aqua" style="text-decoration: none;">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobileNav" class="w3-bar-block w3-black w3-hide w3-hide-medium w3-hide-large w3-margin-top">
+        <a href="home.php" class="w3-bar-item w3-button" style="padding-top: 60px;">Books</a>
+        <a href="book.php" class="w3-bar-item w3-button">Catagories</a>
+        <a href="logout.php" class="w3-bar-item w3-button"><button>Log out</button></a>
+    </div><br>
+    <div class="w3-card w3-white w3-padding" style="margin-top: 50px;">
+        <div class="w3-row">
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">DASHBOARD</a>
+            </div>
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">MY ORDERS</a>
+            </div>
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">MY PROFILE</a>
+            </div>
+            <div class="w3-col l3 m3 s6">
+                <a href="#" class="w3-bar-item w3-button w3-block" style="text-decoration: none;">SETTINGS</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col l12 m12 s12">
+                <div class="w3-card w3-white">
+                    <header class="w3-center">
+                        <h4 style="border-bottom: 2px solid rgb(153, 153, 153);"><b>MY DASHBOARD</b></h4>
+                    </header>
+                    <div class="w3-row">
+                        <div class="w3-col l12 m12 s12">
+                            <div class="w3-card w3-margin w3-round-large w3-border">
+                                <header class="w3-padding">
+                                    <h5><b>Personal Information</b></h5>
+                                </header>
+                                <div class="w3-row">
+                                    <div class="w3-col l3 m3 s12 w3-padding">
+                                        <label><b>state</b></label>
+                                        <input type="text" class="w3-input w3-border w3-round" value="<?php echo $fetch['state']?>">
+                                    </div>
+                                    <div class="w3-col l3 m3 s12 w3-padding">
+                                        <label><b>city</b></label>
+                                        <input type="text" class="w3-input w3-border w3-round" value="<?php echo $fetch['city']?>">
+                                    </div>
+                                    <div class="w3-col l3 m3 s12 w3-padding">
+                                        <label><b>Name</b></label>
+                                        <input type="text" class="w3-input w3-border w3-round" value="<?php echo $fetch['name']?>">
+                                    </div>
+                                    <div class="w3-col l3 m3 s12 w3-padding">
+                                        <label><b>Email</b></label>
+                                        <input type="text" class="w3-input w3-border w3-round" value="<?php echo $fetch['email']?>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/home.js"></script>
+</body>
+
+</html>

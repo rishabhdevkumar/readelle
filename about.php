@@ -19,8 +19,9 @@
     <div class="w3-top w3-black w3-container">
         <div class="w3-row w3-content" style="max-width:1200px; line-height:48px;">
             <div class="w3-col s6 m3 l2 w3-left-align">
-                <header class="w3-xlarge">
-                    <h3 style="font-family: AnandaBlackPersonalUseRegular-rg9Rx; color: #9bb6f0;">
+                <header class="w3-xlarge w3-center">
+                    <img src="./images/20250725_112042[1].png" alt="image" width="70px" height="70px" style="border-radius: 50%;">
+                    <h3 style="display: inline-block; font-family: AnandaBlackPersonalUseRegular-rg9Rx; color: #9bb6f0;">
                         <b>Readelle</b>
                     </h3>
                 </header>
@@ -30,29 +31,29 @@
             </div>
             <div class="w3-col m9 l10 w3-hide-small w3-padding">
                 <div class="w3-center w3-container w3-margin-right">
-                    <a href="home.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="home.php" class="w3-black w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">Home</a>
-                    <a href="book.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="book.php" class="w3-black w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">Book</a>
-                    <a href="about.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="about.php" class="w3-black w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">About</a>
-                    <a href="contact.html" class="w3-black w3-margin-right w3-hover-text-aqua"
+                    <a href="contact.php" class="w3-black w3-margin-right w3-hover-text-aqua"
                         style="text-decoration: none;">Contact</a>
-                    <a href="login.html" class="w3-hover-text-aqua w3-padding-right"
+                    <a href="login.php" class="w3-hover-text-aqua w3-padding-right"
                         style="float: right; text-decoration: none;">Login
-                        <a href="signup.html" class="w3-hover-text-aqua"
+                        <a href="signup.php" class="w3-hover-text-aqua"
                             style="float: right; text-decoration: none;">Start Reading</a>
                 </div>
             </div>
         </div>
     </div>
     <div id="mobileNav" class="w3-bar-block w3-black w3-hide w3-hide-medium w3-hide-large w3-margin-top">
-        <a href="home.html" class="w3-bar-item w3-button" style="padding-top: 60px;">Home</a>
-        <a href="book.html" class="w3-bar-item w3-button">Book</a>
-        <a href="about.html" class="w3-bar-item w3-button">About</a>
-        <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
-        <a href="login.html" class="w3-bar-item w3-button">Login</a>
-        <a href="signup.html" class="w3-bar-item w3-button">Start Reading</a>
+        <a href="home.php" class="w3-bar-item w3-button" style="padding-top: 60px;">Home</a>
+        <a href="book.php" class="w3-bar-item w3-button">Book</a>
+        <a href="about.php" class="w3-bar-item w3-button">About</a>
+        <a href="contact.php" class="w3-bar-item w3-button">Contact</a>
+        <a href="login.php" class="w3-bar-item w3-button">Login</a>
+        <a href="signup.php" class="w3-bar-item w3-button">Start Reading</a>
     </div>
     <div class="w3-display-container" style="position: relative; height: 400px; overflow: hidden;">
         <img src="./images/abouttop.jpg"
@@ -106,13 +107,13 @@
             <div class="w3-col s12 m3 l3">
                 <h4><b>Quick Links</b></h4>
                 <ul class="w3-ul">
-                    <h6><a href="home.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="home.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             Home</a></h6>
-                    <h6><a href="book.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="book.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             Books</a></h6>
-                    <h6><a href="about.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="about.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             About</a></h6>
-                    <h6><a href="contact.html" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
+                    <h6><a href="contact.php" class="w3-text-grey w3-hover-text-blue" style="text-decoration: none;">
                             Contact</a></h6>
                 </ul>
             </div>
